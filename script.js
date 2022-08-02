@@ -160,4 +160,4 @@ var clicker = {
             }
         },50);
     }
-    //BROUPDATE
+    //ClassUpdate
