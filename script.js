@@ -3,6 +3,7 @@ var clicker = {
     Level:1,
     Gold:0,
     SlimeHP:10,
+    Strength:1,
     
    };
     function thing_clicked(thing){
@@ -25,3 +26,4 @@ var clicker = {
             document.querySelector("#slime").innerHTML = "Slay a slime <br>HP: "+clicker.SlimeHP
         },50);
     }
+    //updated.hopefully.
