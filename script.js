@@ -158,6 +158,6 @@ var clicker = {
                 clicker['dmg']+=1;
                 clicker['EXPReq']*=1.02;
             }
-        },50);
+        },10);
     }
     //ClassUpdate
