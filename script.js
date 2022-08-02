@@ -38,7 +38,7 @@ var clicker = {
             document.querySelector("#exp").innerHTML = "You have "+clicker.Experience+" Experience"
             document.querySelector("#lvl").innerHTML = "You are Level "+clicker.Level
             document.querySelector("#money").innerHTML = "Gold: "+clicker.Gold
-            document.querySelector("#slime").innerHTML = "Slay a slime <br>HP: "+clicker.SlimeHP
+            document.querySelector("#slime").innerHTML = "Slay a Slime <br>HP: "+clicker.SlimeHP
             document.querySelector("#weapon").innerHTML = "Weapon: "+clicker.Weapon
             if(clicker.SlimeHP <= 0){
                 clicker['Experience']+=1;
@@ -52,4 +52,4 @@ var clicker = {
             }
         },50);
     }
-    //updated.hopefully.
+    //BROUPDATE
