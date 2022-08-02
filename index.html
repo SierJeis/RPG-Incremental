@@ -11,17 +11,22 @@
 <body onload="updatecount()">
     <div class="content">
         <div class="menus">
-            <h1 id="lvl">You are Level 1</h1>
-            <h2 id="exp">You have 0 Experience</h2>
-            <button onclick="thing_clicked()">Slay a Slime</button>
-        </div>
+            <div class="main">
+                <h1 id="lvl">You are Level 1</h1>
+                <h2 id="exp">You have 0 Experience</h2>
+                <button onclick="thing_clicked()" id="slime">Slay a Slime <br> HP: 10/10</button>
+            </div>
 
-        <div class="upgrades">
-
+            <div class="shop">
+                <div class="upgrades">
+                    <button>Buy Dagger</button>
+                </div>
+            </div>
         </div>
 
         <div class="inventory">
             <p id="money">Gold: 0</p>
+            <p id="weapon">Weapon: Wooden Stick</p>
         </div>
 
     </div>
