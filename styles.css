@@ -7,3 +7,17 @@
 .shop{
     display: none;
 }
+
+.weaponsdepart{
+    position: relative;
+    left: 150px;
+    top: -95px;
+}
+
+.main{
+    display: inline;
+}
+
+.dagger{
+    display: inline;
+}
