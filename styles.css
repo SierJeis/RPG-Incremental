@@ -1,7 +1,7 @@
 .inventory{
     position: fixed;
     bottom: 0;
-    width: 100%
+    width: 50%
 }
 
 .shop{
@@ -15,7 +15,7 @@
 }
 
 .main{
-    display: inline;
+    display: none;
 }
 
 .dagger{
@@ -23,5 +23,63 @@
 }
 
 .sword{
+    display: none;
+}
+
+.inventory{
+    display: none;
+}
+
+.select{
+    display: inline;
+}
+
+.choose{
+    text-align: center;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.developer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.devgold{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 25px;
+    display: none;
+}
+
+.devlevel{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 50px;
+    display: none;
+}
+
+.warriorclass{
+    display: none;
+}
+
+.assassinclass{
+    display: none;
+}
+
+.mageclass{
+    display: none;
+}
+
+.sharpdagger{
+    display: none;
+}
+
+.woodstaff{
     display: none;
 }
