@@ -97,6 +97,7 @@ var clicker = {
     function choose_Warrior(){
         clicker.class = "Myrmidon";
         clicker.classvalue = 1;
+        clicker.dmgbuff = 1.5;
         document.querySelector(".select").style.display = 'none';
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
