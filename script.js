@@ -3,7 +3,8 @@ var clicker = {
     Level:1,
     Gold:0,
     SlimeHP:10,
-    GoblinHP:50,
+    BoarHP: 25,
+    GoblinHP:150,
     Weapon:"Wooden Stick",
     EXPReq: 100,
     WeaponValue: 0,
@@ -23,8 +24,8 @@ var clicker = {
         clicker.Level = 0;
         clicker.Experience = 0;
         clicker.dmg = 1;
-        clicker.EXPReq = 100
-        clicker.Gold = 0
+        clicker.EXPReq = 100;
+        clicker.Gold = 0;
         clicker.Weapon = "Wooden Stick";
         document.querySelector("#counter").innerHTML = "Reincarnations: "+clicker.rebirth
         document.querySelector(".main").style.display = 'none';
@@ -34,6 +35,10 @@ var clicker = {
 
     function slay_Goblin(){
         clicker.GoblinHP-=clicker.dmg;
+    }
+
+    function slay_Boar(){
+        clicker.BoarHP-=clicker.dmg
     }
 
     function cheat(){
@@ -62,6 +67,7 @@ var clicker = {
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
         document.querySelector(".warriorclass").style.display = 'inline';
+        document.querySelector(".woodensword").style.display = 'inline';
     }
 
     function choose_Assassin(){
@@ -70,6 +76,7 @@ var clicker = {
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
         document.querySelector(".assassinclass").style.display = 'inline';
+        document.querySelector(".dagger").style.display = 'inline';
     }
 
     function choose_Warlock(){
@@ -78,6 +85,7 @@ var clicker = {
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
         document.querySelector(".mageclass").style.display = 'inline';
+        document.querySelector(".orb").style.display = 'inline';
     }
 
 
@@ -97,7 +105,6 @@ var clicker = {
             clicker['Gold']-=100;
             clicker['Weapon'] = "Dagger"
             clicker['dmg'] +=2;
-            clicker['WeaponValue'] = 1;
             document.querySelector(".dagger").style.display = 'none';
             document.querySelector(".sharpdagger").style.display = 'inline';
         }
@@ -159,14 +166,15 @@ var clicker = {
             Math.random() * (max - min) + min
         )
     }
-
+    
     function updatecount(){
         setInterval(() => {
             document.querySelector("#exp").innerHTML = "You have "+clicker.Experience+" Experience"
             document.querySelector("#lvl").innerHTML = "You are Level "+clicker.Level
             document.querySelector("#money").innerHTML = "Gold: "+clicker.Gold
             document.querySelector("#slime").innerHTML = "Slay a Slime <br>HP: "+clicker.SlimeHP+"/10"
-            document.querySelector("#Goblin").innerHTML = "Slay a Goblin <br>HP:"+clicker.GoblinHP+"/50"
+            document.querySelector("#boar").innerHTML = "Slay a Boar <br>HP: "+clicker.BoarHP+"/25"
+            document.querySelector("#Goblin").innerHTML = "Slay a Goblin <br>HP: "+clicker.GoblinHP+"/150"
             document.querySelector("#weapon").innerHTML = "Weapon: "+clicker.Weapon
             document.querySelector("#count").innerHTML = "Damage: "+clicker.dmg
             document.querySelector("#role").innerHTML = "Class: "+clicker.class
@@ -175,10 +183,15 @@ var clicker = {
                 clicker['Gold']+=between(1, 3)
                 clicker['SlimeHP'] = 10;
             }
-            if(clicker.GoblinHP <= 0){
+            if(clicker.BoarHP <= 0){
                 clicker['Experience'] += 2 * clicker['multiplier'];
-                clicker['Gold']+=between(2, 6);
-                clicker['GoblinHP'] = 50;
+                clicker['Gold']+=between(2, 5);
+                clicker['BoarHP'] = 25;
+            }
+            if(clicker.GoblinHP <= 0){
+                clicker['Experience'] += 5 * clicker['multiplier'];
+                clicker['Gold']+=between(3, 8);
+                clicker['GoblinHP'] = 150;
             }
             if(clicker.Experience >= clicker.EXPReq){
                 clicker['Level']+=1;
