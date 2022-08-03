@@ -16,11 +16,13 @@
                 <h2 id="exp">You have 0 Experience</h2>
                 <button onclick="thing_clicked()" id="slime" class="slimecss">Slay a Slime <br> HP: 10/10</button>
                 <button onclick="slay_Goblin()" id="Goblin" class="goblincss">Slay a Goblin <br> HP: 50/50</button>
+                <button class="rein" onclick="reincarnate()">Reincarnate</button>
                 <button class="weaponsdepart" onclick="changeMenu()">Shop</button>
                 <div class="dev">
                     <button class="developer" onclick="cheat()">Dev Mode</button>
                     <button class="devgold" onclick="addGold()">Add 100 Gold</button>
                     <button class="devlevel" onclick="addLevel()">Add 1 Level</button>
+                    <button class="devrein" onclick="addRebirth()">Add 1 Rebirth</button>
                 </div>
             </div>
 
@@ -55,6 +57,7 @@
             <p id="role">Class: None</p>
             <p id="weapon">Weapon: Wooden Stick</p>
             <p id="count">Damage: 1</p>
+            <p id="counter">Reincarnations: 0</p>
         </div>
 
     </div>

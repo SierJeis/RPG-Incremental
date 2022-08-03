@@ -14,7 +14,17 @@ body{
 
 .weaponsdepart{
     position: absolute;
-    bottom: 15.5%;
+    bottom: 19%;
+}
+
+.rein{
+    position: absolute;
+    left: 60%;
+    top: 5%;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    display: none;
 }
 
 .slimecss{
@@ -91,6 +101,14 @@ body{
     display: none;
 }
 
+.devrein{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 75px;
+    display: none;
+}
+
 .warriorclass{
     display: none;
 }
@@ -112,5 +130,5 @@ body{
 }
 
 .dev{
-    display: none;
+    display: inline;
 }

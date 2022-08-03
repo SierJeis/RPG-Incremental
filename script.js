@@ -6,15 +6,30 @@ var clicker = {
     GoblinHP:50,
     Weapon:"Wooden Stick",
     EXPReq: 100,
-    daggercost: 100,
-    swordcost: 500,
     WeaponValue: 0,
     dmg: 1,
     class: "None",
+    rebirth: 0,
+    multiplier: 1,
    };
 
     function thing_clicked(){
         clicker.SlimeHP-=clicker.dmg;
+    }
+
+    function reincarnate(){
+        clicker.rebirth+=1;
+        clicker.multiplier+=1;
+        clicker.Level = 0;
+        clicker.Experience = 0;
+        clicker.dmg = 1;
+        clicker.EXPReq = 100
+        clicker.Gold = 0
+        clicker.Weapon = "Wooden Stick";
+        document.querySelector("#counter").innerHTML = "Reincarnations: "+clicker.rebirth
+        document.querySelector(".main").style.display = 'none';
+        document.querySelector(".select").style.display = 'inline';
+        document.querySelector(".inventory").style.display = 'none';
     }
 
     function slay_Goblin(){
@@ -24,6 +39,7 @@ var clicker = {
     function cheat(){
         document.querySelector(".devgold").style.display = 'inline';
         document.querySelector(".devlevel").style.display = 'inline';
+        document.querySelector(".devrein").style.display = 'inline';
     }
 
     function addGold(){
@@ -32,6 +48,12 @@ var clicker = {
 
     function addLevel(){
         clicker.Experience += 100000000;
+    }
+
+    function addRebirth(){
+        clicker.rebirth +=1;
+        clicker.multiplier +=1;
+        document.querySelector("#counter").innerHTML = 'Reincarnations: '+clicker.rebirth
     }
 
     function choose_Warrior(){
@@ -72,7 +94,7 @@ var clicker = {
 
     function buy_Dagger(){
         if(clicker.Gold >= 100){
-            clicker['Gold']-=clicker['daggercost'];
+            clicker['Gold']-=100;
             clicker['Weapon'] = "Dagger"
             clicker['dmg'] +=2;
             clicker['WeaponValue'] = 1;
@@ -103,7 +125,7 @@ var clicker = {
     
     function buy_Sword(){
         if(clicker.Gold >= 500){
-            clicker['Gold']-=clicker['swordcost'];
+            clicker['Gold']-=500;
             clicker['dmg'] -= 2;
             clicker['dmg'] += 5;
             clicker['Weapon'] = "Sword"
@@ -132,6 +154,12 @@ var clicker = {
         }
     }
 
+    function between(min, max){
+        return Math.round(
+            Math.random() * (max - min) + min
+        )
+    }
+
     function updatecount(){
         setInterval(() => {
             document.querySelector("#exp").innerHTML = "You have "+clicker.Experience+" Experience"
@@ -143,14 +171,14 @@ var clicker = {
             document.querySelector("#count").innerHTML = "Damage: "+clicker.dmg
             document.querySelector("#role").innerHTML = "Class: "+clicker.class
             if(clicker.SlimeHP <= 0){
-                clicker['Experience']+=1;
-                clicker['Gold']+=1;
-                clicker['SlimeHP'] = 10
+                clicker['Experience'] += 1 * clicker['multiplier'];
+                clicker['Gold']+=between(1, 3)
+                clicker['SlimeHP'] = 10;
             }
             if(clicker.GoblinHP <= 0){
-                clicker['Experience']+=2
-                clicker['Gold']+=2
-                clicker['GoblinHP'] = 50
+                clicker['Experience'] += 2 * clicker['multiplier'];
+                clicker['Gold']+=between(2, 6);
+                clicker['GoblinHP'] = 50;
             }
             if(clicker.Experience >= clicker.EXPReq){
                 clicker['Level']+=1;
@@ -158,6 +186,11 @@ var clicker = {
                 clicker['dmg']+=1;
                 clicker['EXPReq']*=1.02;
             }
+            if(clicker.Level >= 100){
+                document.querySelector(".rein").style.display = 'inline';
+            } else {
+                document.querySelector(".rein").style.display = 'none';
+            }
         },10);
     }
-    //ClassUpdate
+    //CSSUpdate
