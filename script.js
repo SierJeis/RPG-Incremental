@@ -121,7 +121,7 @@ var clicker = {
         }
     }
 
-    function buy_wolf(){
+    function buy_Wolf(){
         if(clicker.Gold >= 2000){
             clicker['Gold']-=2000;
             clicker['dmg'] -= 5;
