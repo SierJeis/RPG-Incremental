@@ -133,10 +133,22 @@ body{
     display: none;
 }
 
+.metalstaff{
+    display: none;
+}
+
+.wolfdagger{
+    display: none;
+}
+
+.greatsword{
+    display: none;
+}
+
 .woodstaff{
     display: none;
 }
 
 .dev{
-    display: inline;
+    display: none;
 }

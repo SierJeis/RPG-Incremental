@@ -117,6 +117,17 @@ var clicker = {
             clicker['dmg'] -=2;
             clicker['dmg'] +=5;
             document.querySelector(".sharpdagger").style.display = 'none';
+            document.querySelector(".wolfdagger").style.display = 'inline';
+        }
+    }
+
+    function buy_wolf(){
+        if(clicker.Gold >= 2000){
+            clicker['Gold']-=2000;
+            clicker['dmg'] -= 5;
+            clicker['dmg'] += 20;
+            clicker['Weapon'] = "Wolf Dagger"
+            document.querySelector(".wolfdagger").style.display = 'none';
         }
     }
 
@@ -136,8 +147,18 @@ var clicker = {
             clicker['dmg'] -= 2;
             clicker['dmg'] += 5;
             clicker['Weapon'] = "Sword"
-            clicker['WeaponValue'] = 2;
             document.querySelector(".sword").style.display = 'none';
+            document.querySelector(".greatsword").style.display = 'inline';
+        }
+    }
+
+    function buy_GreatSword(){
+        if(clicker.Gold >= 2000){
+            clicker['Gold']-=2000;
+            clicker['dmg'] -= 5;
+            clicker['dmg'] += 20;
+            clicker['Weapon'] = "GreatSword"
+            document.querySelector(".greatsword").style.display = 'none';
         }
     }
 
@@ -158,6 +179,17 @@ var clicker = {
             clicker['dmg'] -=2;
             clicker['dmg'] +=5;
             document.querySelector(".woodstaff").style.display = 'none';
+            document.querySelector(".metalstaff").style.display = 'inline';
+        }
+    }
+
+    function buy_Staff(){
+        if(clicker.Gold >= 2000){
+            clicker['Gold']-=2000;
+            clicker['dmg'] -= 5;
+            clicker['dmg'] += 20;
+            clicker['Weapon'] = "Metal Staff"
+            document.querySelector(".metalstaff").style.display = 'none';
         }
     }
 
