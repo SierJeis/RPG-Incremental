@@ -12,13 +12,25 @@ var clicker = {
     class: "None",
     rebirth: 0,
     multiplier: 1,
+    dmgbuff: 1.50,
+    classvalue: 0,
    };
 
     function thing_clicked(){
-        clicker.SlimeHP-=clicker.dmg;
+        if(clicker.classvalue == 1){
+            clicker.SlimeHP-=clicker.dmg*clicker.dmgbuff;
+        } else if (clicker.classvalue == 3) {
+            clicker.SlimeHP-=clicker.dmg;
+        } else if (clicker.classvalue == 2) {
+            if(between(1, 10) <= 3){
+                clicker.SlimeHP-=clicker.dmg*2;
+            } else {
+                clicker.SlimeHP-=clicker.dmg;
+            }
+        }
     }
-
-    function reincarnate(){
+       
+        function reincarnate(){
         clicker.rebirth+=1;
         clicker.multiplier+=1;
         clicker.Level = 0;
@@ -26,6 +38,7 @@ var clicker = {
         clicker.dmg = 1;
         clicker.EXPReq = 100;
         clicker.Gold = 0;
+        clicker.classvalue = 0;
         clicker.Weapon = "Wooden Stick";
         document.querySelector("#counter").innerHTML = "Reincarnations: "+clicker.rebirth
         document.querySelector(".main").style.display = 'none';
@@ -34,11 +47,31 @@ var clicker = {
     }
 
     function slay_Goblin(){
-        clicker.GoblinHP-=clicker.dmg;
+        if(clicker.classvalue == 1){
+            clicker.GoblinHP-=clicker.dmg*clicker.dmgbuff;
+        } else if (clicker.classvalue == 3) {
+            clicker.GoblinHP-=clicker.dmg;
+        } else if (clicker.classvalue == 2) {
+            if(between(1, 10) <= 3){
+                clicker.GoblinHP-=clicker.dmg*2;
+            } else {
+                clicker.GoblinHP-=clicker.dmg;
+            }
+        }
     }
 
     function slay_Boar(){
-        clicker.BoarHP-=clicker.dmg
+        if(clicker.classvalue == 1){
+            clicker.BoarHP-=clicker.dmg*clicker.dmgbuff;
+        } else if (clicker.classvalue == 3) {
+            clicker.BoarHP-=clicker.dmg;
+        } else if (clicker.classvalue == 2) {
+            if(between(1, 10) <= 3){
+                clicker.BoarHP-=clicker.dmg*2;
+            } else {
+                clicker.BoarHP-=clicker.dmg;
+            }
+        }
     }
 
     function cheat(){
@@ -62,7 +95,8 @@ var clicker = {
     }
 
     function choose_Warrior(){
-        clicker.class = "Myrmidon"
+        clicker.class = "Myrmidon";
+        clicker.classvalue = 1;
         document.querySelector(".select").style.display = 'none';
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
@@ -72,6 +106,8 @@ var clicker = {
 
     function choose_Assassin(){
         clicker.class = "Assassin"
+        clicker.classvalue = 2;
+        clicker.dmgbuff = 1
         document.querySelector(".select").style.display = 'none';
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
@@ -81,6 +117,8 @@ var clicker = {
 
     function choose_Warlock(){
         clicker.class = "Warlock"
+        clicker.classvalue = 3;
+        clicker.dmgbuff = 1
         document.querySelector(".select").style.display = 'none';
         document.querySelector(".main").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'inline';
@@ -208,7 +246,7 @@ var clicker = {
             document.querySelector("#boar").innerHTML = "Slay a Boar <br>HP: "+clicker.BoarHP+"/25"
             document.querySelector("#Goblin").innerHTML = "Slay a Goblin <br>HP: "+clicker.GoblinHP+"/150"
             document.querySelector("#weapon").innerHTML = "Weapon: "+clicker.Weapon
-            document.querySelector("#count").innerHTML = "Damage: "+clicker.dmg
+            document.querySelector("#count").innerHTML = "Damage: "+(clicker.dmg)*(clicker.dmgbuff)
             document.querySelector("#role").innerHTML = "Class: "+clicker.class
             if(clicker.SlimeHP <= 0){
                 clicker['Experience'] += 1 * clicker['multiplier'];
