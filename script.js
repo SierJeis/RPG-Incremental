@@ -115,6 +115,24 @@ function openOptions(){
         document.querySelector(".main").style.display = 'none';
         document.querySelector(".select").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'none';
+        document.querySelector(".dagger").onclick = buy_Dagger();
+        document.querySelector(".sharpdagger").onclick = buy_Sharp();
+        document.querySelector(".wolfdagger").onclick = buy_Wolf();
+        document.querySelector(".woodensword").onclick = buy_woodSword();
+        document.querySelector(".sword").onclick = buy_Sword();
+        document.querySelector(".greatsword").onclick = buy_GreatSword();
+        document.querySelector(".orb").onclick = buy_Orb();
+        document.querySelector(".woodenstaff").onclick = buy_woodStaff();
+        document.querySelector(".metalstaff").onclick = buy_Staff();
+        document.querySelector(".woodensword").innerHTML = "Buy Wooden Sword <br> Cost: 100 Gold <br> Better than a wooden stick.. ¯\_(ツ)_/¯"
+        document.querySelector(".sword").innerHTML = "Buy Sword <br> Cost: 500 Gold <br> Has some length, should be pretty efficient."
+        document.querySelector(".greatsword").innerHTML = "Buy GreatSword <br> Cost: 2000 Gold <br> Big sword go brrrrrr."
+        document.querySelector(".dagger").innerHTML = "Buy Dagger <br> Cost: 100 Gold <br> Dinked blade, but should do good for slaying goblins."
+        document.querySelector(".sharpdagger").innerHTML = "Buy Sharpened Dagger <br> Cost: 500 Gold <br> Dagger with a clean edge, Goblins arms don't stand a chance."
+        document.querySelector(".wolfdagger").innerHTML = "Buy Wolf Tooth Dagger <br> Cost: 2000 Gold <br> Created from the tooth of a Wolf."
+        document.querySelector(".orb").innerHTML = "Buy Orb <br> Cost: 100 <br> Enhances your magical prowess, perfect for burning Slimes."
+        document.querySelector(".woodenstaff").innerHTML = "Buy Wooden Staff <br> Cost: 500 <br> Place the Orb upon a magically infused staff."
+        document.querySelector(".metalstaff").innerHTML = "Buy Metal Staff <br> Cost: 2000 <br> Give your orb a more significant base."
     }
 
     function slay_Goblin(){
