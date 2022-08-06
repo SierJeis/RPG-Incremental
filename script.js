@@ -333,6 +333,19 @@ function resetData(){
             } else {
                 document.querySelector(".rein").style.display = 'none';
             }
+            if(clicker.classvalue == 1){
+                document.querySelector(".warriorclass").style.display = 'inline';
+                document.querySelector(".assassinclass").style.display = 'none';
+                document.querySelector(".mageclass").style.display = 'none';
+            } else if(clicker.classvalue == 2) {
+                document.querySelector(".assassinclass").style.display = 'inline';
+                document.querySelector(".warriorclass").style.display = 'none';
+                document.querySelector(".mageclass").style.display = 'none';
+            } else if(clicker.classvalue == 3) {
+                document.querySelector(".mageclass").style.display = 'inline';
+                document.querySelector(".assassinclass").style.display = 'none';
+                document.querySelector(".warriorclass").style.display = 'none';
+            }
         },10);
     }
     //CSSUpdate
