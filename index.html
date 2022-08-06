@@ -17,6 +17,7 @@
                 <button onclick="thing_clicked()" id="slime" class="slimecss">Slay a Slime <br> HP: 10/10</button>
                 <button onclick="slay_Goblin()" id="Goblin" class="goblincss">Slay a Goblin <br> HP: 65/65</button>
                 <button onclick="slay_Boar()" id ="boar" class="boarcss">Slay a Boar <br> HP: 25/25</button>
+                <button onclick="slay_Wolf()" class="wolfcss">Slay a Wolf <br> HP: 170/170</button>
                 <button class="rein" onclick="reincarnate()">Reincarnate</button>
                 <button class="weaponsdepart" onclick="changeMenu()">Shop</button>
                 <div class="dev">
@@ -25,6 +26,8 @@
                     <button class="devlevel" onclick="addLevel()">Add 1 Level</button>
                     <button class="devrein" onclick="addRebirth()">Add 1 Rebirth</button>
                 </div>
+                
+                <button class="options" onclick="openOptions()">Options</button>
             </div>
 
             <div class="shop">
@@ -55,6 +58,15 @@
                     <br> <br> <button onclick="loadGame()" class="loadgame">Load Game</button>
                 </div>
             </div>
+
+            <div class="settings">
+                <button onclick="resetData()" class="resetbutton">Reset</button>
+                <button onclick="back()" class="returnbutton">Return</button>
+                <br>
+                <h1>Changelog:</h1> <hr style="width: 230px;">
+                <p>Update One: <br> Nerfed Warriors Buff to 30%. <br> Buffed Assassins CritDmg to 3x. <br> Added Option Button. <br> Added Changelog. <br> Nerfed Goblin. <br> Added Wolf. <br> Shop Fixes. <br> Revamped Damage Calculation. Again. </p>
+            </div>
+
         </div>
 
         <div class="inventory">
@@ -64,7 +76,6 @@
             <p id="count">Damage: 1</p>
             <p id="counter">Reincarnations: 0</p>
             <button onclick="save()">Save</button>
-            <button onclick="resetData()">Reset</button>
         </div>
 
     </div>

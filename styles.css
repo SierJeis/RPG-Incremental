@@ -9,7 +9,14 @@ body{
 }
 
 .shop{
+    position: absolute;
     display: none;
+    text-align: center;
+    left: 0%;
+    top: 0%;
+    margin: auto;
+    padding: 2px;
+
 }
 
 .weaponsdepart{
@@ -47,9 +54,17 @@ body{
 .goblincss{
     position: absolute;
     left: 46.2%;
-    top: 26.45%;
+    top: 26.47%;
     width: 150px;
     height: 50px;
+}
+
+.wolfcss{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    left: 46.2%;
+    top: 32.9%;
 }
 
 .main{
@@ -64,9 +79,6 @@ body{
     display: inline;
 }
 
-.sword{
-    display: none;
-}
 
 .inventory{
     display: none;
@@ -129,30 +141,43 @@ body{
     display: none;
 }
 
-.sharpdagger{
-    display: none;
-}
-
-.metalstaff{
-    display: none;
-}
-
-.wolfdagger{
-    display: none;
-}
-
-.greatsword{
-    display: none;
-}
-
-.woodstaff{
-    display: none;
-}
-
 .dev{
-    display: none;
+    display: inline;
 }
 
 .loadgame{
     display: inline;
+}
+
+.options{
+    position: absolute;
+    display: inline;
+    right: 0;
+    top: 0;
+}
+
+.settings{
+    display: none;
+    text-align: center;
+    color: white;
+}
+
+.resetbutton{
+    position: absolute;
+    left: 32%;
+    top: 10%;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    background-color: red;
+    
+}
+
+.returnbutton{
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    text-align: center;
+    width: 150px;
+    height: 50px;
 }
