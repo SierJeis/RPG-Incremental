@@ -142,7 +142,7 @@ body{
 }
 
 .dev{
-    display: inline;
+    display: none;
 }
 
 .loadgame{
