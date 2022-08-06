@@ -16,6 +16,57 @@ var clicker = {
     classvalue: 0,
    };
 
+   function save(){
+    window.localStorage.setItem("Level", clicker.Level);
+    window.localStorage.setItem("Experience", clicker.Experience);
+    window.localStorage.setItem("Gold", clicker.Gold);
+    window.localStorage.setItem("Weapon", clicker.Weapon);
+    window.localStorage.setItem("EXPReq", clicker.EXPReq);
+    window.localStorage.setItem("dmg", clicker.dmg);
+    window.localStorage.setItem("Class", clicker.class);
+    window.localStorage.setItem("Rebirth", clicker.rebirth);
+    window.localStorage.setItem("Multiplier", clicker.multiplier);
+    window.localStorage.setItem("ClassValue", clicker.classvalue);
+}
+
+function load(){
+    clicker.Level = JSON.parse(window.localStorage.getItem("Level"));
+    clicker.Experience = JSON.parse(window.localStorage.getItem("Experience"));
+    clicker.Gold = JSON.parse(window.localStorage.getItem("Gold"));
+    clicker.Weapon = window.localStorage.getItem("Weapon");
+    clicker.EXPReq = JSON.parse(window.localStorage.getItem("EXPReq"));
+    clicker.dmg = JSON.parse(window.localStorage.getItem("dmg"));
+    clicker.class = window.localStorage.getItem("Class");
+    clicker.rebirth = JSON.parse(window.localStorage.getItem("Rebirth"));
+    clicker.multiplier = JSON.parse(window.localStorage.getItem("Multiplier"));
+    clicker.classvalue = JSON.parse(window.localStorage.getItem("ClassValue"));
+}
+
+function loadGame(){
+    if(localStorage.getItem("Level") === null){
+        alert('You have no data.')
+    } else {
+        clicker.Level = JSON.parse(window.localStorage.getItem("Level"));
+        clicker.Experience = JSON.parse(window.localStorage.getItem("Experience"));
+        clicker.Gold = JSON.parse(window.localStorage.getItem("Gold"));
+        clicker.Weapon = window.localStorage.getItem("Weapon");
+        clicker.EXPReq = JSON.parse(window.localStorage.getItem("EXPReq"));
+        clicker.dmg = JSON.parse(window.localStorage.getItem("dmg"));
+        clicker.class = window.localStorage.getItem("Class");
+        clicker.rebirth = JSON.parse(window.localStorage.getItem("Rebirth"));
+        clicker.multiplier = JSON.parse(window.localStorage.getItem("Multiplier"));
+        clicker.classvalue = JSON.parse(window.localStorage.getItem("ClassValue"));
+        document.querySelector(".select").style.display = 'none';
+        document.querySelector(".main").style.display = 'inline';
+        document.querySelector(".inventory").style.display = 'inline';
+    }
+}
+
+function resetData(){
+    window.localStorage.clear();
+    window.location.reload();
+}
+
     function thing_clicked(){
         if(clicker.classvalue == 1){
             clicker.SlimeHP-=clicker.dmg*clicker.dmgbuff;
@@ -239,6 +290,13 @@ var clicker = {
     }
     
     function updatecount(){
+        clicker.class = window.localStorage.getItem("Class");
+        if(clicker.class = "None"){
+            document.querySelector(".select").style.display = 'inline';
+        } else {
+            document.querySelector(".main").style.display = 'inline';
+        }
+       
         setInterval(() => {
             document.querySelector("#exp").innerHTML = "You have "+clicker.Experience+" Experience"
             document.querySelector("#lvl").innerHTML = "You are Level "+clicker.Level

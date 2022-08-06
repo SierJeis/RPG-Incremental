@@ -14,7 +14,7 @@ body{
 
 .weaponsdepart{
     position: absolute;
-    bottom: 19%;
+    bottom: 21.3%;
 }
 
 .rein{
@@ -74,7 +74,7 @@ body{
 }
 
 .select{
-    display: inline;
+    display: none;
     color: white;
     user-select: none;
 }
@@ -151,4 +151,8 @@ body{
 
 .dev{
     display: none;
+}
+
+.loadgame{
+    display: inline;
 }
