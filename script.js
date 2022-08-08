@@ -102,7 +102,7 @@ function openOptions(){
         }
     }
        
-        function reincarnate(){
+    function reincarnate(){
         clicker.rebirth+=1;
         clicker.multiplier+=1;
         clicker.Level = 0;
@@ -115,23 +115,23 @@ function openOptions(){
         document.querySelector(".main").style.display = 'none';
         document.querySelector(".select").style.display = 'inline';
         document.querySelector(".inventory").style.display = 'none';
-        document.querySelector(".dagger").onclick = buy_Dagger();
-        document.querySelector(".sharpdagger").onclick = buy_Sharp();
-        document.querySelector(".wolfdagger").onclick = buy_Wolf();
-        document.querySelector(".woodensword").onclick = buy_woodSword();
-        document.querySelector(".sword").onclick = buy_Sword();
-        document.querySelector(".greatsword").onclick = buy_GreatSword();
-        document.querySelector(".orb").onclick = buy_Orb();
-        document.querySelector(".woodenstaff").onclick = buy_woodStaff();
-        document.querySelector(".metalstaff").onclick = buy_Staff();
-        document.querySelector(".woodensword").innerHTML = "Buy Wooden Sword <br> Cost: 100 Gold <br> Better than a wooden stick.. ¯\_(ツ)_/¯"
+        document.querySelector(".dagger").disabled = false;
+        document.querySelector(".sharpdagger").disabled = false;
+        document.querySelector(".wolfdagger").disabled = false;
+        document.querySelector(".woodensword").disabled = false;
+        document.querySelector(".sword").disabled = false;
+        document.querySelector(".greatsword").disabled = false;
+        document.querySelector(".orb").disabled = false;
+        document.querySelector(".woodstaff").disabled = false;
+        document.querySelector(".metalstaff").disabled = false;
+        document.querySelector(".woodensword").innerHTML = "Buy Wooden Sword <br> Cost: 100 Gold <br> Better than a wooden stick.."
         document.querySelector(".sword").innerHTML = "Buy Sword <br> Cost: 500 Gold <br> Has some length, should be pretty efficient."
         document.querySelector(".greatsword").innerHTML = "Buy GreatSword <br> Cost: 2000 Gold <br> Big sword go brrrrrr."
         document.querySelector(".dagger").innerHTML = "Buy Dagger <br> Cost: 100 Gold <br> Dinked blade, but should do good for slaying goblins."
         document.querySelector(".sharpdagger").innerHTML = "Buy Sharpened Dagger <br> Cost: 500 Gold <br> Dagger with a clean edge, Goblins arms don't stand a chance."
         document.querySelector(".wolfdagger").innerHTML = "Buy Wolf Tooth Dagger <br> Cost: 2000 Gold <br> Created from the tooth of a Wolf."
         document.querySelector(".orb").innerHTML = "Buy Orb <br> Cost: 100 <br> Enhances your magical prowess, perfect for burning Slimes."
-        document.querySelector(".woodenstaff").innerHTML = "Buy Wooden Staff <br> Cost: 500 <br> Place the Orb upon a magically infused staff."
+        document.querySelector(".woodstaff").innerHTML = "Buy Wooden Staff <br> Cost: 500 <br> Place the Orb upon a magically infused staff."
         document.querySelector(".metalstaff").innerHTML = "Buy Metal Staff <br> Cost: 2000 <br> Give your orb a more significant base."
     }
 
@@ -162,7 +162,6 @@ function openOptions(){
             }
         }
     }
-
 
 
     function cheat(){
@@ -238,7 +237,7 @@ function openOptions(){
             clicker['Gold']-=100;
             clicker['Weapon'] = "Dagger"
             clicker['dmg'] +=2;
-            document.querySelector(".dagger").onclick = null;
+            document.querySelector(".dagger").disabled = true;
             document.querySelector(".dagger").innerHTML = "Dagger Bought <br> Cost: Purchased <br> Dinked blade, but should do good for slaying goblins."
         }
     }
@@ -249,7 +248,7 @@ function openOptions(){
             clicker['Weapon'] = "Sharpened Dagger"
             clicker['dmg'] -=2;
             clicker['dmg'] +=5;
-            document.querySelector(".sharpdagger").onclick = null;
+            document.querySelector(".sharpdagger").disabled = true;
             document.querySelector(".sharpdagger").innerHTML = "Sharpened Dagger Bought <br> Cost: Purchased <br> Dagger with a clean edge, Goblins arms don't stand a chance."
         }
     }
@@ -260,7 +259,7 @@ function openOptions(){
             clicker['dmg'] -= 5;
             clicker['dmg'] += 20;
             clicker['Weapon'] = "Wolf Dagger"
-            document.querySelector(".wolfdagger").onclick = null;
+            document.querySelector(".wolfdagger").disabled = true;
             document.querySelector(".wolfdagger").innerHTML = "Wolf Dagger Bought <br> Cost: Purchased <br> Created from the tooth of a Wolf."
         }
     }
@@ -270,8 +269,8 @@ function openOptions(){
         clicker['Gold']-=100;
         clicker['dmg'] += 2;
         clicker['Weapon'] = "Wooden Sword";
-        document.querySelector(".woodensword").onclick = null;
-        document.querySelector(".woodensword").innerHTML = "Wooden Sword Bought <br> Cost: Purchased <br> Better than a wooden stick.. ¯\_(ツ)_/¯"
+        document.querySelector(".woodensword").disabled = true;
+        document.querySelector(".woodensword").innerHTML = "Wooden Sword Bought <br> Cost: Purchased <br> Better than a wooden stick.."
     }
    }
     
@@ -281,7 +280,7 @@ function openOptions(){
             clicker['dmg'] -= 2;
             clicker['dmg'] += 5;
             clicker['Weapon'] = "Sword"
-            document.querySelector(".sword").onclick = null;
+            document.querySelector(".sword").disabled = true;
             document.querySelector(".sword").innerHTML = "Sword Bought <br> Cost: Purchased <br> Has some length, should be pretty efficient."
         }
     }
@@ -292,7 +291,7 @@ function openOptions(){
             clicker['dmg'] -= 5;
             clicker['dmg'] += 20;
             clicker['Weapon'] = "GreatSword"
-            document.querySelector(".greatsword").onclick = null;
+            document.querySelector(".greatsword").disabled = true;
             document.querySelector(".greatsword").innerHTML = "GreatSword Bought <br> Cost: Purchased <br> Big sword go brrrrrr."
         }
     }
@@ -302,7 +301,7 @@ function openOptions(){
             clicker['Gold']-=100;
             clicker['dmg'] += 2;
             clicker['Weapon'] = "Orb";
-            document.querySelector(".orb").onclick = null;
+            document.querySelector(".orb").disabled = true;
             document.querySelector(".orb").innerHTML = "Orb Bought <br> Cost: Purchased <br> Enhances your magical prowess, perfect for burning Slimes."
         }
 }
@@ -313,7 +312,7 @@ function openOptions(){
             clicker['Weapon'] = "Wooden Staff"
             clicker['dmg'] -=2;
             clicker['dmg'] +=5;
-            document.querySelector(".woodstaff").onclick = null;
+            document.querySelector(".woodstaff").disabled = true;
             document.querySelector(".woodstaff").innerHTML = "Wooden Staff Bought <br> Cost: Purchased <br> Place the Orb upon a magically infused staff."
         }
     }
@@ -324,7 +323,7 @@ function openOptions(){
             clicker['dmg'] -= 5;
             clicker['dmg'] += 20;
             clicker['Weapon'] = "Metal Staff"
-            document.querySelector(".metalstaff").onclick = null;
+            document.querySelector(".metalstaff").disabled = true;
             document.querySelector(".metalstaff").innerHTML = "Metal Staff Bought <br> Cost: Purchased <br> Give your orb a more significant base."
         }
     }

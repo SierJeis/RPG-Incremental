@@ -14,10 +14,16 @@
             <div class="main">
                 <h1 id="lvl">You are Level 1</h1>
                 <h2 id="exp">You have 0 Experience</h2>
-                <button onclick="thing_clicked()" id="slime" class="slimecss">Slay a Slime <br> HP: 10/10</button>
-                <button onclick="slay_Goblin()" id="Goblin" class="goblincss">Slay a Goblin <br> HP: 65/65</button>
-                <button onclick="slay_Boar()" id ="boar" class="boarcss">Slay a Boar <br> HP: 25/25</button>
-                <button onclick="slay_Wolf()" class="wolfcss">Slay a Wolf <br> HP: 170/170</button>
+                <div class="mobs">
+                    <button onclick="thing_clicked()" id="slime" class="slimecss">Slay a Slime <br> HP: 10/10</button>
+                    <p></p>
+                    <button onclick="slay_Goblin()" id="Goblin" class="goblincss">Slay a Goblin <br> HP: 65/65</button>
+                    <p></p>
+                    <button onclick="slay_Boar()" id ="boar" class="boarcss">Slay a Boar <br> HP: 25/25</button>
+                    <p></p>
+                    <button onclick="slay_Wolf()" class="wolfcss">Slay a Wolf <br> HP: 170/170</button>
+                    <p></p>
+                </div>
                 <button class="rein" onclick="reincarnate()">Reincarnate</button>
                 <button class="weaponsdepart" onclick="changeMenu()">Shop</button>
                 <div class="dev">
@@ -32,7 +38,7 @@
 
             <div class="shop">
                 <div class="warriorclass">
-                    <button class="woodensword" onclick="buy_woodSword()">Buy Wooden Sword <br> Cost: 100 Gold <br> Better than a wooden stick.. ¯\_(ツ)_/¯</button>
+                    <button class="woodensword" onclick="buy_woodSword()">Buy Wooden Sword <br> Cost: 100 Gold <br> Better than a wooden stick..</button>
                     <button class="sword" onclick="buy_Sword()">Buy Sword <br> Cost: 500 Gold <br> Has some length, should be pretty efficient.</button>
                     <button class="greatsword" onclick="buy_GreatSword()">Buy GreatSword <br> Cost: 2000 Gold <br> Big sword go brrrrrr.</button>
                 </div>
@@ -64,7 +70,7 @@
                 <button onclick="back()" class="returnbutton">Return</button>
                 <br>
                 <h1>Changelog:</h1> <hr style="width: 230px;">
-                <p>Update One: <br> Nerfed Warriors Buff to 30%. <br> Buffed Assassins CritDmg to 3x. <br> Added Option Button. <br> Added Changelog. <br> Nerfed Goblin. <br> Added Wolf. <br> Shop Fixes. <br> Revamped Damage Calculation. Again. <br> Fixed Bugged Reincarnation</p>
+                <p>Update One: <br> Nerfed Warriors Buff to 30%. <br> Buffed Assassins CritDmg to 3x. <br> Added Option Button. <br> Added Changelog. <br> Nerfed Goblin. <br> Added Wolf. <br> Shop Fixes. <br> Revamped Damage Calculation. Again. <br> Fixed Bugged Reincarnation <br> Styling Additions <br> Fixed not being able to buy weapons after Reincarnation.</p>
             </div>
 
         </div>
