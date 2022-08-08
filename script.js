@@ -399,5 +399,8 @@ function openOptions(){
                 document.querySelector(".warriorclass").style.display = 'none';
             }
         },10);
+        setInterval(() => {
+            save()
+        }, 10000);
     }
     //CSSUpdate
