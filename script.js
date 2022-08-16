@@ -400,7 +400,7 @@ function openOptions(){
             }
         },10);
         setInterval(() => {
-            save()
+            save();
         }, 10000);
     }
     //CSSUpdate
